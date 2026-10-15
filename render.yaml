@@ -3,14 +3,14 @@ services:
     name: activity07
     env: python
     plan: free
-    region: oregon        # choose your preferred region in Render
-     buildCommand: |
+    region: oregon
+    buildCommand: |
       pip install --upgrade pip
       pip install -r requirements.txt
-     startCommand: |
+    startCommand: |
       uvicorn server:app --host 0.0.0.0 --port $PORT
-     autoDeploy: true
-     envVars:
+    autoDeploy: true
+    envVars:
       - key: PYTHON_VERSION
-        value: 3.14
-     healthCheckPath: /
+        value: "3.14"
+    healthCheckPath: /
